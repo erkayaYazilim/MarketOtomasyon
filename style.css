@@ -1,0 +1,156 @@
+/* GENEL STİL AYARLARI */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+/* KAPSAYICI (container) */
+.container {
+  width: 95%;
+  max-width: 450px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.app-title {
+  text-align: center;
+  color: #34495e;
+  margin-bottom: 10px;
+}
+.app-subtitle {
+  text-align: center;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+/* FORM VE GİRİŞ/KAYIT EKRANLARI */
+.auth-container {
+  max-width: 400px;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.form-container input {
+  margin-bottom: 12px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+.form-container input:focus {
+  border-color: #3498db;
+}
+button {
+  padding: 12px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #2980b9;
+}
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+.logout-btn {
+  background-color: #e74c3c;
+}
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+.upload-link {
+  text-decoration: none;
+  background-color: #2ecc71;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 5px;
+}
+.upload-link:hover {
+  background-color: #27ae60;
+}
+.back-link {
+  display: inline-block;
+  margin-top: 12px;
+  text-decoration: none;
+  color: #3498db;
+}
+.back-link:hover {
+  text-decoration: underline;
+}
+/* TABLOLAR */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+table thead tr {
+  background: #ecf0f1;
+}
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+table img {
+  width: 50px;
+  height: auto;
+  border-radius: 3px;
+}
+/* KÜÇÜK EKRANLARDA RESPONSIVE (SATIR-KART YÖNTEMİ) */
+@media (max-width: 500px) {
+  .container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+  table thead {
+    display: none; /* Başlıklar gizleniyor */
+  }
+  table, table tbody, table tr, table td {
+    display: block;
+    width: 100%;
+  }
+  table tr {
+    margin-bottom: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  table td {
+    text-align: left;
+    position: relative;
+    padding: 12px;
+    font-size: 0.85rem;
+    border: none; /* Her satırın altında sadece dış border kalsın */
+    border-bottom: 1px solid #eee;
+  }
+  table td:last-child {
+    border-bottom: none; /* Son satırda extra border istemeyelim */
+  }
+  table td:before {
+    content: attr(data-label);
+    display: inline-block;
+    width: 40%;
+    min-width: 100px;
+    font-weight: bold;
+    color: #7f8c8d;
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yönetim Paneli</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container dashboard-container">
+    <h1 id="store-info" class="app-title">Market Yönetimi</h1>
+    <p class="app-subtitle">Ürünlerinizi yönetin, stokları güncelleyin ve satışları takip edin.</p>
+
+    <div class="actions">
+      <a href="upload.html" class="upload-link">Toplu Ürün Yükle</a>
+      <button id="logout-btn" class="logout-btn">Çıkış Yap</button>
+    </div>
+
+    <h2>Ürün Listesi</h2>
+    <table id="products-table">
+      <thead>
+        <tr>
+          <th>Resim</th>
+          <th>Ürün Adı</th>
+          <th>Barkod</th>
+          <th>Stok</th>
+          <th>Fiyat (₺)</th>
+          <th>Güncelle</th>
+        </tr>
+      </thead>
+      <tbody id="products-list">
+        <!-- Örnek satır (data-label eklemek için)
+             JavaScript ile eklenecek satırlarda da benzer data-label kullanılması önerilir.
+        
+        <tr>
+          <td data-label="Resim"><img src="..." /></td>
+          <td data-label="Ürün Adı">Deneme Ürün</td>
+          <td data-label="Barkod">1234567890</td>
+          <td data-label="Stok">50</td>
+          <td data-label="Fiyat (₺)">19.99</td>
+          <td data-label="Güncelle"><button>Güncelle</button></td>
+        </tr>
+        -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Firebase ve JS Dosyaları -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="app.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Market Yönetim Sistemi - Giriş / Kayıt</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container auth-container">
+    <h1 class="app-title">Market Yönetim Sistemi</h1>
+    <p class="app-subtitle">Stok takibini, satış işlemlerini ve ürün yönetimini tek bir yerden yönetin.</p>
+
+    <!-- Giriş Formu -->
+    <div class="form-container" id="login-form-container">
+      <h2>Giriş Yap</h2>
+      <input type="email" id="login-email" placeholder="Email" />
+      <input type="password" id="login-password" placeholder="Şifre" />
+      <button id="login-btn">Giriş Yap</button>
+      <p>
+        Hesabın yok mu?
+        <a href="#" id="show-register">Kayıt Ol</a>
+      </p>
+    </div>
+
+    <!-- Kayıt Formu -->
+    <div class="form-container" id="register-form-container" style="display: none;">
+      <h2>Kayıt Ol</h2>
+      <input type="text" id="register-storeName" placeholder="Market İsmi" />
+      <input type="text" id="register-taxNumber" placeholder="Vergi Numarası" />
+      <input type="email" id="register-email" placeholder="Email" />
+      <input type="password" id="register-password" placeholder="Şifre" />
+      <button id="register-btn">Kayıt Ol</button>
+      <p>
+        Hesabın var mı?
+        <a href="#" id="show-login">Giriş Yap</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Firebase ve JS Dosyaları -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="app.js"></script>
+  <script>
+    const loginFormContainer = document.getElementById('login-form-container');
+    const registerFormContainer = document.getElementById('register-form-container');
+    const showRegister = document.getElementById('show-register');
+    const showLogin = document.getElementById('show-login');
+
+    showRegister.addEventListener('click', () => {
+      loginFormContainer.style.display = 'none';
+      registerFormContainer.style.display = 'block';
+    });
+
+    showLogin.addEventListener('click', () => {
+      registerFormContainer.style.display = 'none';
+      loginFormContainer.style.display = 'block';
+    });
+
+    const loginBtn = document.getElementById('login-btn');
+    const registerBtn = document.getElementById('register-btn');
+
+    loginBtn.addEventListener('click', loginUser);
+    registerBtn.addEventListener('click', registerUser);
+  </script>
+</body>
+</html>
